@@ -1,0 +1,13 @@
+# Ignore all
+*
+
+# Except files .c et .h
+!*.c
+!*.h
+!*.md
+
+#Ignore *main.c
+*-main.c
+
+# Include all folders with files
+!*/
