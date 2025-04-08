@@ -29,4 +29,7 @@ void binary_tree_print(const binary_tree_t *);
 int binary_tree_is_leaf(const binary_tree_t *node);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
+void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
+size_t binary_tree_depth(const binary_tree_t *tree);
+size_t binary_tree_leaves(const binary_tree_t *tree);
 #endif
