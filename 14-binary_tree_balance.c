@@ -37,29 +37,35 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	 * if there is a child.
 	 **/
 	if (tree->left)
-		height_left = binary_tree_height(tree->left) + 1;
+		height_left = binary_tree_height(tree->left);
 
 	if (tree->right)
-		height_right = binary_tree_height(tree->right) + 1;
+		height_right = binary_tree_height(tree->right);
 
 	/*Returns the greatest height between left and right*/
-	return (max(height_left, height_right));
+	return (max(height_left, height_right) + 1);
 }
 
+/**
+ * binary_tree_balance - Measures the balance factor of a binary tree.
+ * @tree: Pointer to the root node of the tree.
+ *
+ * Return: Balance factor (left height - right height).
+ */
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	size_t left;
 	size_t right;
-	
+
 	if (!tree)
 	{
 		return (0);
 	}
 
 	left = binary_tree_height(tree->left);
-	printf("%zu", left);
+	/*printf("%zu\n", left);*/
 	right = binary_tree_height(tree->right);
-	printf ("%zu", right);
+	/*printf("%zu\n", right);*/
 
 	return (left - right);
 }
