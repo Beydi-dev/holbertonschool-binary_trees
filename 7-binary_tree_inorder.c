@@ -9,15 +9,13 @@
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (!tree && !func)
+	if (tree && func)
 	{
-		return;
-	}
-
 	/*Recursive call in the left subtree*/
 	binary_tree_inorder(tree->left, func);
 	/*For the current node: apply the function func to its value n*/
 	func(tree->n);
 	/*Recursive call in the right subtree*/
 	binary_tree_inorder(tree->right, func);
+	}
 }
